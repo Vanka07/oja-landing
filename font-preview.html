@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oja POS — Font Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Inter:wght@400;600;700;900&family=DM+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0c0a09; color: #fafaf9; padding: 2rem; }
+        .section { margin-bottom: 3rem; padding: 2rem; border: 1px solid #292524; border-radius: 20px; background: #1c1917; }
+        .section-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: #e05e1b; margin-bottom: 1.5rem; }
+        .hero-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 0.75rem; }
+        .hero-sub { font-size: 1.1rem; color: #a8a29e; line-height: 1.6; margin-bottom: 1rem; }
+        .body-text { font-size: 0.95rem; color: #a8a29e; line-height: 1.7; margin-bottom: 0.75rem; }
+        .pricing { font-size: 2.5rem; font-weight: 900; margin-bottom: 0.25rem; }
+        .pricing .currency { font-size: 1.2rem; color: #78716c; }
+        .btn { display: inline-block; background: #e05e1b; color: #fff; padding: 0.85rem 2rem; border-radius: 100px; font-size: 1rem; font-weight: 700; text-decoration: none; margin-top: 0.5rem; }
+        .highlight { color: #e05e1b; }
+        .badge { display: inline-block; background: rgba(224, 94, 27, 0.15); color: #e05e1b; padding: 0.3rem 0.8rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; }
+        .feature-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .divider { border: none; border-top: 1px solid #292524; margin: 1.5rem 0; }
+        .nav-sample { font-size: 0.9rem; font-weight: 600; color: #a8a29e; margin-bottom: 0.5rem; }
+        .winner { border-color: #e05e1b; box-shadow: 0 0 30px rgba(224, 94, 27, 0.1); }
+
+        /* Font families */
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-combo { font-family: 'Inter', sans-serif; }
+        .font-combo .hero-title, .font-combo .pricing, .font-combo .section-label, .font-combo .badge, .font-combo .btn, .font-combo .feature-title { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body>
+
+<h1 style="font-family: 'Inter', sans-serif; text-align: center; font-size: 1.5rem; margin-bottom: 0.5rem;">🎨 Oja POS Font Comparison</h1>
+<p style="font-family: 'Inter', sans-serif; text-align: center; color: #78716c; font-size: 0.9rem; margin-bottom: 3rem;">Same content, different fonts — pick your favourite</p>
+
+<!-- OPTION A: Poppins Only -->
+<div class="section font-poppins">
+    <div class="section-label">Option A — Poppins (Current)</div>
+    <div class="nav-sample">Home &nbsp; Features &nbsp; Pricing &nbsp; FAQ &nbsp; About</div>
+    <hr class="divider">
+    <div class="badge">Now Live — Try Free</div>
+    <div class="hero-title">The POS Built for <span class="highlight">Every Nigerian Business</span></div>
+    <div class="hero-sub">Sell offline, track profit, manage staff — all from your phone. Whether you run a supermarket, salon, pharmacy, boutique, or restaurant.</div>
+    <div class="btn">🛒 Try Oja Free</div>
+    <hr class="divider">
+    <div class="feature-title">🔌 Works Offline</div>
+    <div class="body-text">Sell anywhere, anytime — even when NEPA takes light. Everything syncs when you're back online.</div>
+    <hr class="divider">
+    <div class="pricing"><span class="currency">₦</span>2,500<span style="font-size: 0.9rem; color: #78716c; font-weight: 400;">/month</span></div>
+    <div class="body-text">Growth Plan — Unlimited products, cloud sync, advanced reports</div>
+</div>
+
+<!-- OPTION B: Inter Only -->
+<div class="section font-inter">
+    <div class="section-label">Option B — Inter (Modern SaaS Standard)</div>
+    <div class="nav-sample">Home &nbsp; Features &nbsp; Pricing &nbsp; FAQ &nbsp; About</div>
+    <hr class="divider">
+    <div class="badge">Now Live — Try Free</div>
+    <div class="hero-title">The POS Built for <span class="highlight">Every Nigerian Business</span></div>
+    <div class="hero-sub">Sell offline, track profit, manage staff — all from your phone. Whether you run a supermarket, salon, pharmacy, boutique, or restaurant.</div>
+    <div class="btn">🛒 Try Oja Free</div>
+    <hr class="divider">
+    <div class="feature-title">🔌 Works Offline</div>
+    <div class="body-text">Sell anywhere, anytime — even when NEPA takes light. Everything syncs when you're back online.</div>
+    <hr class="divider">
+    <div class="pricing"><span class="currency">₦</span>2,500<span style="font-size: 0.9rem; color: #78716c; font-weight: 400;">/month</span></div>
+    <div class="body-text">Growth Plan — Unlimited products, cloud sync, advanced reports</div>
+</div>
+
+<!-- OPTION C: Poppins + Inter Combo -->
+<div class="section font-combo winner">
+    <div class="section-label">Option C — Poppins Headlines + Inter Body (Recommended) ⭐</div>
+    <div class="nav-sample">Home &nbsp; Features &nbsp; Pricing &nbsp; FAQ &nbsp; About</div>
+    <hr class="divider">
+    <div class="badge">Now Live — Try Free</div>
+    <div class="hero-title">The POS Built for <span class="highlight">Every Nigerian Business</span></div>
+    <div class="hero-sub">Sell offline, track profit, manage staff — all from your phone. Whether you run a supermarket, salon, pharmacy, boutique, or restaurant.</div>
+    <div class="btn">🛒 Try Oja Free</div>
+    <hr class="divider">
+    <div class="feature-title">🔌 Works Offline</div>
+    <div class="body-text">Sell anywhere, anytime — even when NEPA takes light. Everything syncs when you're back online.</div>
+    <hr class="divider">
+    <div class="pricing"><span class="currency">₦</span>2,500<span style="font-size: 0.9rem; color: #78716c; font-weight: 400;">/month</span></div>
+    <div class="body-text">Growth Plan — Unlimited products, cloud sync, advanced reports</div>
+</div>
+
+</body>
+</html>

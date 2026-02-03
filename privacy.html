@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Oja POS</title>
+    <meta name="description" content="Oja POS Privacy Policy. Learn how we collect, use, and protect your data. Your business data stays on your device — we never sell your information.">
+    <meta name="keywords" content="Oja POS privacy, POS data protection Nigeria, point of sale privacy policy, shop data safety">
+    <link rel="canonical" href="https://ojapos.app/privacy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ojapos.app/privacy.html">
+    <meta property="og:title" content="Privacy Policy — Oja POS">
+    <meta property="og:description" content="Oja POS Privacy Policy. Your business data stays on your device — we never sell your information.">
+    <meta property="og:image" content="https://ojapos.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy — Oja POS">
+    <meta name="twitter:description" content="Oja POS Privacy Policy. Your business data stays on your device — we never sell your information.">
+    <meta name="twitter:image" content="https://ojapos.app/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='22' fill='%23e05e1b'/><text x='24' y='33' text-anchor='middle' font-size='30' font-weight='900' font-family='Helvetica,Arial,sans-serif' fill='white'>O</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --burnt-orange: #e05e1b;
+            --burnt-orange-dark: #c2410c;
+            --money-green: #16a34a;
+            --bg-dark: #0c0a09;
+            --bg-card: #1c1917;
+            --border: #292524;
+            --text-primary: #fafaf9;
+            --text-secondary: #a8a29e;
+            --text-muted: #78716c;
+        }
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+        h1, h2, h3, .hero-title, .cta-title, .section-title, .pricing-price, .pricing-plan, 
+        .section-label, .hero-badge, .btn-primary, .btn-secondary, .nav-cta, .pricing-btn,
+        .feature-card h3, .note-card h3, .stat-number, .nav-logo, .footer-logo {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(12, 10, 9, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .nav-cart { width: 32px; height: 32px; }
+        .nav-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.03em; }
+        .nav-logo .o { color: var(--burnt-orange); }
+        .nav-logo .ja { color: var(--text-primary); }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a.active { color: var(--burnt-orange); }
+        .nav-cta {
+            background: var(--burnt-orange) !important;
+            color: #fff !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 700 !important;
+            transition: all 0.3s;
+        }
+        .nav-cta:hover {
+            background: var(--burnt-orange-dark) !important;
+            transform: translateY(-1px);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* PAGE CONTENT */
+        .page-header {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        .content h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1rem;
+            letter-spacing: -0.02em;
+        }
+        .content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem;
+        }
+        .content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .content ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        .content ul li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .content ul li::before {
+            content: '•';
+            color: var(--burnt-orange);
+            font-weight: 800;
+            position: absolute;
+            left: 0;
+        }
+        .content a {
+            color: var(--burnt-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .content a:hover { text-decoration: underline; }
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .footer-logo { font-size: 1.3rem; font-weight: 900; }
+        .footer-logo .o { color: var(--burnt-orange); }
+        .footer-logo .ja { color: var(--text-primary); }
+        .footer-tagline { color: var(--text-muted); font-size: 0.85rem; }
+        .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--text-secondary); }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(12, 10, 9, 0.97);
+                backdrop-filter: blur(12px);
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
+                border-bottom: 1px solid var(--border);
+            }
+            .page-header { padding: 3rem 1.25rem 2rem; }
+            .content { padding: 0 1.25rem 3rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="/" class="nav-left" style="text-decoration:none;">
+        <svg class="nav-cart" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6H11L13 11H42L37 29H17L13 11" stroke="#e05e1b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M17 29L15 35H37" stroke="#e05e1b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="19" cy="42" r="3.5" fill="#e05e1b"/>
+            <circle cx="35" cy="42" r="3.5" fill="#e05e1b"/>
+        </svg>
+        <span class="nav-logo"><span class="o">O</span><span class="ja">ja</span></span>
+    </a>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/features.html">Features</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/about.html">About</a>
+        <a href="https://app.ojapos.app" class="nav-cta">Try Free</a>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: February 2026</p>
+</section>
+
+<!-- CONTENT -->
+<div class="content">
+    <p>At Oja POS, we take your privacy seriously. This Privacy Policy explains how we collect, use, store, and protect your information when you use our point-of-sale application and related services.</p>
+
+    <h2>1. Who We Are</h2>
+    <p>Oja POS is a point-of-sale application built for Nigerian retail businesses. Our mission is to make every Nigerian shop profitable with simple technology. For privacy-related questions, contact us at <a href="mailto:hello@ojapos.app">hello@ojapos.app</a>.</p>
+
+    <h2>2. Information We Collect</h2>
+    <h3>Account Information</h3>
+    <ul>
+        <li>Shop name and business type</li>
+        <li>Your name and phone number</li>
+        <li>Email address (optional)</li>
+        <li>Staff names and roles (if you add staff)</li>
+    </ul>
+
+    <h3>Business Data</h3>
+    <ul>
+        <li>Product inventory (names, prices, quantities)</li>
+        <li>Sales and transaction records</li>
+        <li>Customer names and credit records</li>
+        <li>Staff payroll information</li>
+        <li>Reports and analytics data</li>
+    </ul>
+
+    <h3>Device & Usage Information</h3>
+    <ul>
+        <li>Device type and operating system</li>
+        <li>App version and usage patterns</li>
+        <li>Crash logs and error reports (to improve the app)</li>
+    </ul>
+
+    <h2>3. How Your Data Is Stored</h2>
+    <div class="content-card">
+        <h3>🔒 Local-First Storage</h3>
+        <p>Oja POS is built with an <strong>offline-first architecture</strong>. This means your business data is stored primarily on your device. You own your data, and it lives on your phone first.</p>
+    </div>
+    <div class="content-card">
+        <h3>☁️ Optional Cloud Sync</h3>
+        <p>If you enable cloud backup (Business plan), your data is securely synced to our cloud infrastructure powered by Supabase. This allows you to access your data across multiple devices and ensures backup in case your phone is lost or damaged.</p>
+    </div>
+    <p>Cloud data is encrypted in transit (TLS/SSL) and stored on secure servers. We use Supabase, which provides enterprise-grade security and is hosted on trusted cloud providers.</p>
+
+    <h2>4. How We Use Your Information</h2>
+    <p>We use your information to:</p>
+    <ul>
+        <li>Provide and improve the Oja POS application</li>
+        <li>Enable features like WhatsApp receipts and low stock alerts</li>
+        <li>Sync your data across devices (if cloud backup is enabled)</li>
+        <li>Send you important service updates</li>
+        <li>Provide customer support</li>
+        <li>Generate anonymized, aggregated analytics to improve our product</li>
+    </ul>
+
+    <h2>5. What We Do NOT Do</h2>
+    <div class="content-card">
+        <ul>
+            <li><strong>We do NOT sell your data</strong> — not to advertisers, not to data brokers, not to anyone</li>
+            <li><strong>We do NOT share your business data</strong> with third parties for their marketing</li>
+            <li><strong>We do NOT access your data</strong> without your permission</li>
+            <li><strong>We do NOT use your data</strong> to compete with your business</li>
+        </ul>
+    </div>
+
+    <h2>6. WhatsApp Integration</h2>
+    <p>When you send receipts or credit reminders via WhatsApp, the message is sent directly from your device using WhatsApp's sharing mechanism. Oja POS does not store or intercept WhatsApp messages. Customer phone numbers used for WhatsApp receipts are stored only on your device (and in cloud backup if enabled).</p>
+
+    <h2>7. Data Retention</h2>
+    <p>Your local data remains on your device as long as you use the app. If you delete the app, local data is removed. Cloud-synced data is retained for 90 days after account deletion, after which it is permanently removed from our servers.</p>
+
+    <h2>8. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+        <li><strong>Access</strong> — Request a copy of all data we hold about you</li>
+        <li><strong>Correct</strong> — Update inaccurate information</li>
+        <li><strong>Delete</strong> — Request deletion of your account and associated data</li>
+        <li><strong>Export</strong> — Download your business data in a portable format</li>
+        <li><strong>Opt out</strong> — Disable cloud sync and keep data local-only</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:hello@ojapos.app">hello@ojapos.app</a>.</p>
+
+    <h2>9. Data Security</h2>
+    <p>We implement industry-standard security measures including:</p>
+    <ul>
+        <li>PIN-based access control for the app and staff accounts</li>
+        <li>TLS/SSL encryption for all data in transit</li>
+        <li>Encrypted cloud storage via Supabase</li>
+        <li>Regular security audits and updates</li>
+    </ul>
+
+    <h2>10. Children's Privacy</h2>
+    <p>Oja POS is designed for business use and is not intended for children under the age of 13. We do not knowingly collect information from children.</p>
+
+    <h2>11. Nigerian Data Protection</h2>
+    <p>We operate in compliance with the Nigeria Data Protection Regulation (NDPR) and the Nigeria Data Protection Act (NDPA) 2023. As a Nigerian-focused application, we are committed to adhering to local data protection standards and safeguarding your rights as a data subject.</p>
+
+    <h2>12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the app or via the contact information you provided. The "Last updated" date at the top reflects the most recent revision.</p>
+
+    <h2>13. Contact Us</h2>
+    <div class="content-card">
+        <p><strong>Oja POS</strong></p>
+        <p>Email: <a href="mailto:hello@ojapos.app">hello@ojapos.app</a></p>
+        <p>WhatsApp: <a href="https://wa.me/2348022471137">+234 802 247 1137</a></p>
+        <p>Website: <a href="https://ojapos.app">ojapos.app</a></p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <span class="footer-logo"><span class="o">O</span><span class="ja">ja</span></span>
+            <span class="footer-tagline">Your Market, Your Money</span>
+        </div>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/features.html">Features</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; padding: 1.5rem 0; border-top: 1px solid #292524; margin-top: 1.5rem;">
+        <a href="mailto:hello@ojapos.app" style="color: #a8a29e; text-decoration: none; font-size: 0.85rem; font-weight: 600;">📧 hello@ojapos.app</a>
+        <a href="https://wa.me/2348022471137" style="color: #a8a29e; text-decoration: none; font-size: 0.85rem; font-weight: 600;">💬 +234 802 247 1137</a>
+        <a href="https://x.com/ojaposapp" target="_blank" style="color: #a8a29e; text-decoration: none; font-size: 0.85rem; font-weight: 600;">𝕏 @ojaposapp</a>
+        <a href="https://instagram.com/ojaposapp" target="_blank" style="color: #a8a29e; text-decoration: none; font-size: 0.85rem; font-weight: 600;">📸 @ojaposapp</a>
+        <span style="color: #a8a29e; font-size: 0.85rem; font-weight: 600;">🌐 ojapos.app</span>
+    </div>
+    <div class="footer-bottom">
+        © 2026 Oja POS. Built with ❤️ for Nigerian businesses. <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria" style="height:1em;vertical-align:middle;">
+    </div>
+</footer>
+
+</body>
+</html>

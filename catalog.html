@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Catalog — Oja POS</title>
+  <meta name="description" content="Browse products and order via WhatsApp. Powered by Oja POS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0c0a09;
+      color: #e7e5e4;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+    .header {
+      padding: 24px 0 16px;
+      border-bottom: 1px solid #292524;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #292524;
+      border: 1px solid #3f3b39;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: #a8a29e;
+      margin-bottom: 12px;
+    }
+
+    .header-badge svg { flex-shrink: 0; }
+
+    .shop-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fafaf9;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .shop-desc {
+      font-size: 15px;
+      color: #a8a29e;
+      line-height: 1.5;
+      max-width: 520px;
+    }
+
+    .product-count {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #78716c;
+    }
+
+    /* Product Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 20px 0;
+    }
+
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .shop-name { font-size: 36px; }
+    }
+
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* Product Card */
+    .card {
+      background: #1c1917;
+      border: 1px solid #292524;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #3f3b39;
+    }
+
+    .card-body {
+      padding: 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-category {
+      display: inline-block;
+      background: #292524;
+      color: #a8a29e;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+
+    .card-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fafaf9;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e05e1b;
+      margin-bottom: 12px;
+    }
+
+    .card-price .currency {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #22c55e;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      width: 100%;
+    }
+
+    .btn-whatsapp:hover { background: #16a34a; }
+
+    .btn-whatsapp svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 0;
+      text-align: center;
+      border-top: 1px solid #292524;
+      margin-top: 20px;
+    }
+
+    .footer p {
+      color: #78716c;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .footer a {
+      color: #e05e1b;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    /* Empty State */
+    .empty {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .empty-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    .empty h2 {
+      font-size: 24px;
+      color: #fafaf9;
+      margin-bottom: 8px;
+    }
+
+    .empty p {
+      color: #a8a29e;
+      font-size: 15px;
+      margin-bottom: 24px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e05e1b;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .btn-cta:hover { background: #b84a15; }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: #78716c;
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid #292524;
+      border-top-color: #e05e1b;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading catalog...</p>
+    </div>
+  </div>
+
+  <!-- WhatsApp SVG icon template -->
+  <template id="wa-icon">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </template>
+
+  <script>
+    (function() {
+      const app = document.getElementById('app');
+      const loading = document.getElementById('loading');
+
+      function decodeData() {
+        try {
+          const hash = window.location.hash;
+          if (!hash || !hash.includes('data=')) return null;
+
+          const b64 = hash.split('data=')[1];
+          if (!b64) return null;
+
+          const json = decodeURIComponent(escape(atob(b64)));
+          return JSON.parse(json);
+        } catch (e) {
+          console.error('Failed to decode catalog data:', e);
+          return null;
+        }
+      }
+
+      function formatPrice(price) {
+        return Number(price).toLocaleString('en-NG');
+      }
+
+      function waLink(number, productName, shopName) {
+        const text = `Hi! I'd like to order ${productName} from ${shopName}`;
+        return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+      }
+
+      function renderCatalog(data) {
+        const { shop, desc, wa, products } = data;
+
+        if (!products || products.length === 0) {
+          renderEmpty();
+          return;
+        }
+
+        let html = `
+          <div class="header">
+            <div class="header-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Powered by Oja POS
+            </div>
+            <h1 class="shop-name">${escapeHtml(shop)}</h1>
+            ${desc ? `<p class="shop-desc">${escapeHtml(desc)}</p>` : ''}
+            <p class="product-count">${products.length} product${products.length !== 1 ? 's' : ''} available</p>
+          </div>
+          <div class="grid">
+        `;
+
+        for (const p of products) {
+          const link = waLink(wa, p.n, shop);
+          html += `
+            <div class="card">
+              <div class="card-body">
+                ${p.c ? `<span class="card-category">${escapeHtml(p.c)}</span>` : ''}
+                <div class="card-name">${escapeHtml(p.n)}</div>
+                <div class="card-price"><span class="currency">₦</span>${formatPrice(p.p)}</div>
+                <a href="${link}" target="_blank" rel="noopener" class="btn-whatsapp">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Order
+                </a>
+              </div>
+            </div>
+          `;
+        }
+
+        html += `
+          </div>
+          <div class="footer">
+            <p>Get your own free online catalog</p>
+            <a href="https://ojapos.app">ojapos.app</a>
+          </div>
+        `;
+
+        app.innerHTML = html;
+      }
+
+      function renderEmpty() {
+        app.innerHTML = `
+          <div class="empty">
+            <div class="empty-icon">🛒</div>
+            <h2>Catalog Not Found</h2>
+            <p>This catalog link may be invalid or expired. Want to create your own free online product catalog?</p>
+            <a href="https://ojapos.app" class="btn-cta">
+              Create Your Catalog — Free
+            </a>
+          </div>
+          <div class="footer">
+            <p>Powered by</p>
+            <a href="https://ojapos.app">Oja POS — Free POS for Nigerian Businesses</a>
+          </div>
+        `;
+      }
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      // Main
+      const data = decodeData();
+      if (data && data.products) {
+        renderCatalog(data);
+      } else {
+        renderEmpty();
+      }
+    })();
+  </script>
+</body>
+</html>
