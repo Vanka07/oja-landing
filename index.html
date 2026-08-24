@@ -47,26 +47,10 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Starter",
+          "name": "Oja POS",
           "price": "0",
           "priceCurrency": "NGN",
-          "description": "Free forever — unlimited sales, basic reports, WhatsApp receipts, offline mode"
-        },
-        {
-          "@type": "Offer",
-          "name": "Growth",
-          "price": "2500",
-          "priceCurrency": "NGN",
-          "billingPeriod": "month",
-          "description": "Unlimited products, advanced reports, cloud backup & sync"
-        },
-        {
-          "@type": "Offer",
-          "name": "Business",
-          "price": "5000",
-          "priceCurrency": "NGN",
-          "billingPeriod": "month",
-          "description": "Unlimited staff, payroll, low stock alerts, receipt printer, priority support"
+          "description": "Free for everyone right now — no paywall. Open the app and use it."
         }
       ],
       "author": {
@@ -652,7 +636,7 @@
             box-shadow: 0 0 40px rgba(224, 94, 27, 0.1);
         }
         .pricing-card.featured::before {
-            content: 'Most Popular';
+            content: 'Available now';
             position: absolute;
             top: -14px;
             left: 50%;
@@ -734,6 +718,19 @@
         .pricing-btn-filled:hover {
             background: var(--burnt-orange-dark);
             transform: translateY(-2px);
+        }
+        .pricing-btn-disabled {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            background: transparent;
+            border: 2px solid var(--border);
+            color: var(--text-muted);
+            cursor: default;
         }
 
         /* TRUST */
@@ -907,14 +904,14 @@
 <section class="hero">
     <div class="hero-badge">
         <span class="dot"></span>
-        Now Live — Try Free
+        Now Live — Free for everyone
     </div>
     <h1 class="hero-title">
         The POS Built for <span class="highlight">Every Nigerian Business</span>
     </h1>
     <p class="hero-subtitle">
-        Sell offline, track profit, share your catalog on WhatsApp — all from your phone. 
-        Whether you run a supermarket, salon, pharmacy, boutique, or restaurant.
+        Sell offline, track profit, share your catalog on WhatsApp — all from your phone.
+        Free for every Nigerian business right now. No paywall. No checkout on this site.
     </p>
     <div class="hero-buttons">
         <a href="https://app.ojapos.app" class="btn-primary">
@@ -1255,15 +1252,15 @@
         <div style="background: #1c1917; border: 1px solid #292524; border-radius: 16px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
             <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(22, 163, 74, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">💰</div>
             <div>
-                <div style="font-weight: 700; color: #fafaf9; font-size: 0.95rem; margin-bottom: 0.25rem;">No hidden fees — ever</div>
-                <div style="color: #a8a29e; font-size: 0.82rem; line-height: 1.5;">Start free, upgrade when ready. No surprises.</div>
+                <div style="font-weight: 700; color: #fafaf9; font-size: 0.95rem; margin-bottom: 0.25rem;">Free for everyone right now</div>
+                <div style="color: #a8a29e; font-size: 0.82rem; line-height: 1.5;">No paywall. No card. Open the app and use it.</div>
             </div>
         </div>
         <div style="background: #1c1917; border: 1px solid #292524; border-radius: 16px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
             <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(22, 163, 74, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">🏦</div>
             <div>
-                <div style="font-weight: 700; color: #fafaf9; font-size: 0.95rem; margin-bottom: 0.25rem;">Secure payments via Paystack</div>
-                <div style="color: #a8a29e; font-size: 0.82rem; line-height: 1.5;">Same payment security trusted by thousands of Nigerian businesses.</div>
+                <div style="font-weight: 700; color: #fafaf9; font-size: 0.95rem; margin-bottom: 0.25rem;">No checkout on this site</div>
+                <div style="color: #a8a29e; font-size: 0.82rem; line-height: 1.5;">This website does not sell plans. Paid tiers are not for sale yet.</div>
             </div>
         </div>
         <div style="background: #1c1917; border: 1px solid #292524; border-radius: 16px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
@@ -1294,53 +1291,51 @@
 <section class="section" id="pricing">
     <div class="section-header">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">Simple, honest pricing</h2>
-        <p class="section-subtitle">Start free. Upgrade when your business grows.</p>
+        <h2 class="section-title">Free for everyone right now</h2>
+        <p class="section-subtitle">No paywall. No checkout. Open the app and use it. Growth and Business prices below are planned later — they are not for sale on this site.</p>
     </div>
     <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr);">
-        <div class="pricing-card">
-            <div class="pricing-plan">Starter</div>
+        <div class="pricing-card featured">
+            <div class="pricing-plan">Oja POS</div>
             <div class="pricing-price">Free</div>
-            <div class="pricing-period">Forever</div>
+            <div class="pricing-period">For everyone, for now</div>
             <ul class="pricing-features">
                 <li>Unlimited sales</li>
-                <li>Up to 50 products</li>
-                <li>Basic reports (today)</li>
-                <li>1 staff account</li>
+                <li>Reports in the app</li>
+                <li>Cloud backup if you turn it on</li>
                 <li>WhatsApp receipts</li>
                 <li>WhatsApp Storefront</li>
                 <li>Offline mode</li>
                 <li>Credit book</li>
+                <li>Staff, payroll, and other tools in the app</li>
             </ul>
-            <a href="https://app.ojapos.app" class="pricing-btn pricing-btn-outline">Get Started Free</a>
+            <a href="https://app.ojapos.app" class="pricing-btn pricing-btn-filled">Open Oja Free</a>
         </div>
         <div class="pricing-card" style="border-color: #0d9488; position: relative; box-shadow: 0 0 40px rgba(13, 148, 136, 0.1);">
-            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #0d9488; color: #fff; padding: 0.35rem 1.25rem; border-radius: 100px; font-size: 0.75rem; font-weight: 800;">Popular</div>
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #0d9488; color: #fff; padding: 0.35rem 1.25rem; border-radius: 100px; font-size: 0.75rem; font-weight: 800;">Coming later</div>
             <div class="pricing-plan">Growth</div>
             <div class="pricing-price"><span class="currency">₦</span>2,500</div>
-            <div class="pricing-period">per month</div>
+            <div class="pricing-period">planned / month — not for sale yet</div>
             <ul class="pricing-features">
-                <li>Everything in Starter</li>
-                <li>Unlimited products</li>
-                <li>Advanced reports & charts</li>
-                <li>Cloud backup & sync</li>
+                <li>A future paid tier</li>
+                <li>Not purchasable from this site</li>
+                <li>No checkout or free trial today</li>
+                <li>Use the free app in the meantime</li>
             </ul>
-            <a href="https://app.ojapos.app" class="pricing-btn" style="background: #0d9488; color: #fff; box-shadow: 0 4px 20px rgba(13, 148, 136, 0.25);">Start Free Trial</a>
+            <span class="pricing-btn-disabled">Not for sale yet</span>
         </div>
-        <div class="pricing-card featured">
-            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--burnt-orange); color: #fff; padding: 0.35rem 1.25rem; border-radius: 100px; font-size: 0.75rem; font-weight: 800;">Best Value</div>
+        <div class="pricing-card" style="position: relative;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #44403c; color: #fff; padding: 0.35rem 1.25rem; border-radius: 100px; font-size: 0.75rem; font-weight: 800;">Coming later</div>
             <div class="pricing-plan">Business</div>
             <div class="pricing-price"><span class="currency">₦</span>5,000</div>
-            <div class="pricing-period">per month</div>
+            <div class="pricing-period">planned / month — not for sale yet</div>
             <ul class="pricing-features">
-                <li>Everything in Growth</li>
-                <li>Unlimited staff accounts</li>
-                <li>Payroll management</li>
-                <li>Low stock WhatsApp alerts</li>
-                <li>Receipt printer support</li>
-                <li>Priority support</li>
+                <li>A future paid tier</li>
+                <li>Not purchasable from this site</li>
+                <li>No checkout or free trial today</li>
+                <li>Use the free app in the meantime</li>
             </ul>
-            <a href="https://app.ojapos.app" class="pricing-btn pricing-btn-filled">Start Free Trial</a>
+            <span class="pricing-btn-disabled">Not for sale yet</span>
         </div>
     </div>
 </section>
@@ -1348,7 +1343,7 @@
 <!-- FINAL CTA -->
 <section class="cta-section">
     <h2 class="cta-title">Ready to run your business<br>like a boss?</h2>
-    <p class="cta-subtitle">Join Nigerian business owners who are already tracking every Naira with Oja.</p>
+    <p class="cta-subtitle">The app is free for everyone right now. No paywall. Just open it and start selling.</p>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
         <a href="https://app.ojapos.app" class="btn-primary" style="font-size: 1.15rem; padding: 1.15rem 3rem;">
             🛒 Try Oja Free

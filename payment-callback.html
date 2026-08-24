@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Status — Oja POS</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Return to the app — Oja POS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -36,17 +37,13 @@
       justify-content: center;
       margin: 0 auto 24px;
       font-size: 40px;
+      background: rgba(224, 94, 27, 0.15);
     }
-    .icon.success { background: rgba(16, 185, 129, 0.15); }
-    .icon.failed { background: rgba(239, 68, 68, 0.15); }
-    .icon.loading { background: rgba(224, 94, 27, 0.15); }
     h1 {
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 12px;
     }
-    .success h1 { color: #10b981; }
-    .failed h1 { color: #ef4444; }
     p {
       color: #a8a29e;
       font-size: 15px;
@@ -72,14 +69,6 @@
     .btn:hover { opacity: 0.9; }
     .btn-primary { background: #e05e1b; color: white; }
     .btn-secondary { background: #292524; color: #a8a29e; margin-left: 8px; }
-    .spinner {
-      width: 40px; height: 40px;
-      border: 3px solid #292524;
-      border-top-color: #e05e1b;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
     .logo {
       font-size: 14px;
       color: #57534e;
@@ -90,49 +79,23 @@
 </head>
 <body>
   <div class="card" id="card">
-    <div class="icon loading">
-      <div class="spinner"></div>
-    </div>
-    <h1>Processing...</h1>
-    <p>Checking your payment status.</p>
+    <div class="icon">🛒</div>
+    <h1>Return to the app</h1>
+    <p>This page does not confirm a payment or activate a plan. Oja POS is free for everyone right now, and this site has no checkout.</p>
+    <p>If you were sent here after a payment attempt, go back to the app to continue. We do not verify Paystack from this page.</p>
+    <p class="ref" id="ref" hidden></p>
+    <a href="https://app.ojapos.app" class="btn btn-primary">Open Oja POS</a>
+    <a href="/" class="btn btn-secondary">Back to homepage</a>
+    <div class="logo">Powered by <span>Oja POS</span></div>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const reference = params.get('reference') || params.get('trxref') || '';
-    const card = document.getElementById('card');
-
-    function showSuccess() {
-      card.innerHTML = `
-        <div class="icon success">✅</div>
-        <div class="success">
-          <h1>Payment Successful!</h1>
-        </div>
-        <p>Your Oja POS Business plan has been activated. You can now close this window and return to the app.</p>
-        ${reference ? `<p class="ref">Reference: ${reference}</p>` : ''}
-        <div class="logo">Powered by <span>Oja POS</span></div>
-      `;
-    }
-
-    function showFailed(msg) {
-      card.innerHTML = `
-        <div class="icon failed">❌</div>
-        <div class="failed">
-          <h1>Payment Failed</h1>
-        </div>
-        <p>${msg || 'Something went wrong with your payment. Please try again from the app.'}</p>
-        ${reference ? `<p class="ref">Reference: ${reference}</p>` : ''}
-        <a href="/" class="btn btn-secondary">Back to Oja POS</a>
-        <div class="logo">Powered by <span>Oja POS</span></div>
-      `;
-    }
-
-    // If we have a reference, the payment likely went through (Paystack redirects on success)
     if (reference) {
-      showSuccess();
-    } else {
-      // No reference = something went wrong or user cancelled
-      showFailed('No payment reference found. If you completed the payment, please return to the app and verify manually.');
+      const refEl = document.getElementById('ref');
+      refEl.hidden = false;
+      refEl.textContent = 'If you have a reference number, keep it for support: ' + reference;
     }
   </script>
 </body>
