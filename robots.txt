@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /font-preview.html
+Disallow: /font-preview
+Disallow: /payment-callback.html
 
 Sitemap: https://ojapos.app/sitemap.xml
