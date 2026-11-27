@@ -286,7 +286,7 @@
 <!-- PAGE HEADER -->
 <section class="page-header">
     <h1>Privacy Policy</h1>
-    <p>Last updated: February 2026</p>
+    <p>Last updated: November 2026</p>
 </section>
 
 <!-- CONTENT -->
@@ -316,10 +316,13 @@
 
     <h3>Device & Usage Information</h3>
     <ul>
-        <li>Device type and operating system</li>
-        <li>App version and usage patterns</li>
-        <li>Crash logs and error reports (to improve the app)</li>
+        <li>Device type and operating system, when the app can read them</li>
+        <li>App version</li>
+        <li>Product events the app tries to record: event name, platform, shop id, and for a completed sale the total and payment method. There is no separate crash-reporting SDK.</li>
     </ul>
+
+    <h3>What stays on the device</h3>
+    <p>Even when cloud backup is on, these stay in this phone or browser only: staff names and PIN hashes, payroll, cash-session counts, categories, and suppliers. PINs and recovery codes are stored as salted hashes, not as the digits you typed. On a phone they go in the device keystore. In the browser they stay in local storage, which a person with access to that browser can still copy.</p>
 
     <h2>3. How Your Data Is Stored</h2>
     <div class="content-card">
@@ -328,9 +331,9 @@
     </div>
     <div class="content-card">
         <h3>☁️ Optional Cloud Sync</h3>
-        <p>If you enable cloud backup, your data is securely synced to our cloud infrastructure powered by Supabase. Cloud backup is available now while the app is free for everyone. This allows you to access your data across multiple devices and keep a backup if your phone is lost or damaged.</p>
+        <p>If you turn on cloud backup and sign in, Oja uploads the shop profile, products, sales, customers (name, phone, and credit), expenses, and stock movements to Supabase. That copy is what lets you open the same shop on another device. Cloud backup is optional and is included while the app is free.</p>
     </div>
-    <p>Cloud data is encrypted in transit (TLS/SSL) and stored on secure servers. We use Supabase, which provides enterprise-grade security and is hosted on trusted cloud providers.</p>
+    <p>Traffic to Supabase uses TLS. Supabase encrypts disks. The columns themselves are ordinary text and numbers, not separately encrypted fields. People who administer the Supabase project can read that backup.</p>
 
     <h2>4. How We Use Your Information</h2>
     <p>We use your information to:</p>
@@ -340,7 +343,7 @@
         <li>Sync your data across devices (if cloud backup is enabled)</li>
         <li>Send you important service updates</li>
         <li>Provide customer support</li>
-        <li>Generate anonymized, aggregated analytics to improve our product</li>
+        <li>See which product events are used, when that recording succeeds. Events can include a shop id and a sale total. They are not an anonymized aggregate today, and the app turns recording off if the server rejects the write.</li>
     </ul>
 
     <h2>5. What We Do NOT Do</h2>
@@ -348,16 +351,23 @@
         <ul>
             <li><strong>We do NOT sell your data</strong> — not to advertisers, not to data brokers, not to anyone</li>
             <li><strong>We do NOT share your business data</strong> with third parties for their marketing</li>
-            <li><strong>We do NOT access your data</strong> without your permission</li>
+            <li><strong>We do not look at a shop's books</strong> as part of running the product. The Supabase project owner can still open the backup if cloud sync is on.</li>
             <li><strong>We do NOT use your data</strong> to compete with your business</li>
         </ul>
     </div>
 
-    <h2>6. WhatsApp Integration</h2>
-    <p>When you send receipts or credit reminders via WhatsApp, the message is sent directly from your device using WhatsApp's sharing mechanism. Oja POS does not store or intercept WhatsApp messages. Customer phone numbers used for WhatsApp receipts are stored only on your device (and in cloud backup if enabled).</p>
+    <h2>6. Other services</h2>
+    <ul>
+        <li><strong>WhatsApp.</strong> Receipts, reminders, and catalog shares are sent by you from this device. Oja does not store the WhatsApp message.</li>
+        <li><strong>Open Food Facts.</strong> If you scan a barcode, the app asks world.openfoodfacts.org for a product name. That request includes the barcode.</li>
+        <li><strong>Paystack.</strong> The app is free and does not ask you to pay. If a payment screen is used later, Paystack receives the email and amount for that charge. Oja's verify step does not return the payer's email to the app.</li>
+        <li><strong>This website.</strong> ojapos.app and ojapos.ng load Google Analytics (measurement id G-9P5LC72768). The POS app at app.ojapos.app does not load that tag.</li>
+    </ul>
+
+    <p>Customer phone numbers used for WhatsApp receipts are stored on your device, and in the cloud backup if you turned that on.</p>
 
     <h2>7. Data Retention</h2>
-    <p>Your local data remains on your device as long as you use the app. If you delete the app, local data is removed. Cloud-synced data is retained for 90 days after account deletion, after which it is permanently removed from our servers.</p>
+    <p>Local data stays until you reset the app or delete it. Reset clears the on-device stores. There is no automatic 90-day purge of cloud data. To delete a cloud account and its backup, email <a href="mailto:hello@ojapos.app">hello@ojapos.app</a>. We will delete the auth user and the shop rows we can tie to that account.</p>
 
     <h2>8. Your Rights</h2>
     <p>You have the right to:</p>
@@ -373,10 +383,10 @@
     <h2>9. Data Security</h2>
     <p>We implement industry-standard security measures including:</p>
     <ul>
-        <li>PIN-based access control for the app and staff accounts</li>
-        <li>TLS/SSL encryption for all data in transit</li>
-        <li>Encrypted cloud storage via Supabase</li>
-        <li>Regular security audits and updates</li>
+        <li>A PIN gate when a PIN or staff PIN exists, including after a browser refresh</li>
+        <li>Salted hashes for PINs and recovery codes, not the original digits</li>
+        <li>TLS for data in transit to Supabase</li>
+        <li>Shop data separated by database policies so one signed-in shop cannot read another</li>
     </ul>
 
     <h2>10. Children's Privacy</h2>
